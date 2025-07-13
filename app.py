@@ -19,7 +19,7 @@ h1, h2, h3, p {{
 .stButton>button {{
     color: white;
     background-color: #ff4b4b;
-    padding: 10px 24px;
+    padding: 10px;
     border-radius: 8px;
     font-size: 16px;
     border: none;
