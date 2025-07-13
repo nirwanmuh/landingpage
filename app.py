@@ -4,7 +4,7 @@ from PIL import Image
 st.set_page_config(layout="wide", page_title="My Amazing App")
 
 # Background image style
-page_bg_img = f"""
+page_bg_img =
 <style>
 [data-testid="stAppViewContainer"] {{
     background-image: url("https://raw.githubusercontent.com/USERNAME/REPO/main/images/background.jpg");
@@ -37,7 +37,7 @@ footer {{
     font-size: 14px;
 }}
 </style>
-"""
+
 
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
