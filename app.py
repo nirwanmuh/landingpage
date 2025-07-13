@@ -1,76 +1,68 @@
 import streamlit as st
 from PIL import Image
-import base64
 
-st.set_page_config(
-    page_title="Marketeam",
-    page_icon="📣",
-    layout="wide"
-)
+st.set_page_config(layout="wide", page_title="My Amazing App")
 
-# Background gradient
-st.markdown("""
-    <style>
-    body {
-        background: linear-gradient(135deg, #f9cb28, #9b5de5, #5f0a87);
-        background-size: 400% 400%;
-        animation: gradientBG 15s ease infinite;
-    }
+# Background image style
+page_bg_img = f"""
+<style>
+[data-testid="stAppViewContainer"] {{
+    background-image: url("https://raw.githubusercontent.com/USERNAME/REPO/main/images/background.jpg");
+    background-size: cover;
+    background-position: center;
+}}
 
-    @keyframes gradientBG {
-        0% {background-position: 0% 50%;}
-        50% {background-position: 100% 50%;}
-        100% {background-position: 0% 50%;}
-    }
+h1, h2, h3, p {{
+    color: white;
+}}
 
-    .title-text {
-        font-size: 48px;
-        font-weight: 800;
-        color: white;
-    }
+.stButton>button {{
+    color: white;
+    background-color: #ff4b4b;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: none;
+    transition: 0.3s;
+}}
 
-    .subtitle-text {
-        font-size: 24px;
-        font-weight: 300;
-        color: #eee;
-    }
+.stButton>button:hover {{
+    background-color: #ff1e1e;
+}}
 
-    .btn-start {
-        background-color: black;
-        color: white;
-        padding: 10px 30px;
-        border-radius: 10px;
-        font-size: 18px;
-        text-decoration: none;
-    }
+footer {{
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 14px;
+}}
+</style>
+"""
 
-    </style>
-""", unsafe_allow_html=True)
+st.markdown(page_bg_img, unsafe_allow_html=True)
 
-# Layout
-col1, col2 = st.columns([1, 2])
+# Content
+st.markdown("<h1 style='text-align: center;'>Selamat Datang di Aplikasi Kami</h1>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center;'>Solusi Digital Masa Kini</h3>", unsafe_allow_html=True)
 
-with col1:
-    st.markdown('<div class="title-text">Unlock Top Marketing Talent<br>You Thought Was Out of Reach –</div>', unsafe_allow_html=True)
-    st.markdown('<div class="title-text" style="color:#e0e0ff;">Now Just One Click Away!</div>', unsafe_allow_html=True)
-    st.markdown('<br>', unsafe_allow_html=True)
-    st.markdown('<a href="#" class="btn-start">Start Project</a>', unsafe_allow_html=True)
+st.markdown("<br>", unsafe_allow_html=True)
 
+col1, col2, col3 = st.columns([1,2,1])
 with col2:
-    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Orbit_3.svg/1024px-Orbit_3.svg.png", caption="20k+ Specialists", use_column_width=True)
+    st.button("💡 Mulai Sekarang", use_container_width=True)
 
-# Footer logos
-st.markdown("---")
-footer_cols = st.columns(5)
-logos = {
-    "Dreamure": "https://dummyimage.com/80x40/ffffff/000000&text=Dreamure",
-    "SWITCH.WIN": "https://dummyimage.com/80x40/ffffff/000000&text=SWITCH",
-    "Sphere": "https://dummyimage.com/80x40/ffffff/000000&text=Sphere",
-    "PinSpace": "https://dummyimage.com/80x40/ffffff/000000&text=Pin",
-    "Visionix": "https://dummyimage.com/80x40/ffffff/000000&text=Visionix"
-}
+st.markdown("<br><br><hr><br>", unsafe_allow_html=True)
 
-for i, (name, url) in enumerate(logos.items()):
-    with footer_cols[i]:
-        st.image(url, width=80, caption=name)
+st.markdown("### Tentang Kami")
+st.write("""
+Kami adalah tim pengembang yang menyediakan solusi digital modern berbasis data dan AI. 
+Dengan keahlian di bidang pemrograman, analitik data, dan machine learning, kami membantu organisasi bertransformasi secara digital.
+""")
 
+st.markdown("<br><br>", unsafe_allow_html=True)
+
+st.markdown("""
+<footer>
+📧 Email: contact@example.com | 📞 Telp: +62-812-3456-7890
+</footer>
+""", unsafe_allow_html=True)
